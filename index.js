@@ -119,5 +119,3 @@ async function backDbAsZip() {
 cron.schedule("00 23 * * *", () => {
   backDbAsZip();
 });
-
-backDbAsZip();
