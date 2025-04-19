@@ -9,7 +9,7 @@ dotenv.config();
 
 const DB_URI = process.env.DB_URI;
 const DB_NAME = process.env.DB_NAME;
-const BACKUP_DIR = path.join(__dirname, "backups");
+const BACKUP_DIR = path.join(__dirname, "backups", "popcard");
 const TEMP_FOLDER = path.join(__dirname, "tmp");
 const LOG_FILE = path.join(__dirname, "backup_log.txt");
 
@@ -119,3 +119,4 @@ async function backDbAsZip() {
 cron.schedule("00 23 * * *", () => {
   backDbAsZip();
 });
+backDbAsZip();
